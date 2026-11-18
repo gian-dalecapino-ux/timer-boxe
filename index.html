@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Timer Boxe Solo</title>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Timer Boxe">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="theme-color" content="#c8211a">
+<link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAIAAACyr5FlAAAFjklEQVR4Xu2dS3LbMBAFmVROEa/iS+T+u/gS3vkeWdClKJIszICYL7vXTonz2HiAaBfz7c+vnxvAI74TC3wFcgBygB6aA2gO0ENzAM0BemgOoDlAD80BNAfooTmA5gA9NAfQHKCH5gCaA/TQHEBzgB6aA2gO0ENzAM0BemgOoDlAD80BNAfooTmA5gA9P/T/pAm/3z/kk7y9vsh/uA3fTvIKBpUKEs6gS2c5lgvxFV1FaSiHmxP3NLOklRyBWlzTRpEOciRxol+R1JYjrRY9iqSqHCW0qK5IySek5czYtpLXXKw5KmpxQ6HjaiU51pqhukmBHx1IDTmW3BuVDc/Jdj1GFJDj4J1Y6MQ9ma/tONnlmE7f1ImFljhfp4q8clTR4pqK1/yEpHJMpJxqCVa//p2MzzkaJDth6sTU1qRrDm1GE7fBk9Lj5JJDFWVyLabPInnmSrStdDVj23T3W5WDKVnkUCWSZ23JUV2zKg07Umwr8ixUEeek0LCV/vrcwoznt8riE99eX+R+xBK/rQiTsrhPUQhnESZjR7AcwvmFaRZCOJEwHyMi5RBOLsyxHMK5hClZECmHBGGCRUk+XZgckgWRPLslSGaUZGVBjBySaSWp9UAyqSSx5cTIASUIkEOyCCSLqROSeSW5rcVbDsmEkqT6IZlakt5CvOUYIsmoK9lmd5XDWfyWeGboKseQbEvHn1QJ+MnhqXxv3JL0k2NIqkUTSJ4cssiRJ5EMJEnDSQ63JjwJPnk6yQEV8ZBjqHmSFk3FMJNhqsfxkAOKEi/HcImclvBkzOVwaL/TYp2tuRxQl2A5wpszObH5BMsBmbGVw3pTBNOEbeV4TmxnViEwpUg5IDnIAV+CHIAcoMewOfzfbtCV52dSuy8shnJAdZADOHOAHpoDaI4pfr9/2B338kNzjDmtIsgh5YSKVHrVpAU3jxCGm8j+A4G/DPOE5vjH0IwLJ2kR5JinvSLI8Ym8Nm5orAhyfPL2+nLkJNFSEeT4DxS5BjkegCI7tv+lRoPf2k+fRXaObFXXX44eObzyIx5Ccww4c4sgh4hzKoIcCo4osmR/cQY51BxRpBaRchw868WiUuRIbQSmZCvHkVBKoFLEAtOEbeU4Cc8VMb1/pgTLEdiZy7Fokdh8guXox40idWtj2+zlKJ3ONBYtco91tvHNEducphy8eeHJxMsBafGQY7iAwpdIQoaZDFM9joccUBQnORw0PxU+eTrJMWTYoqciSRpZ5Ni2LImEk8QMj+ccF3ya8Ay4JZmoOSiPbAm4yuGmfGM8M3SVQ0KeHdefbLN7yyERP1tGPkimlqS3EG85hH+tL0mqE5J5nc1w/bYC5QhoDsrjhpy1EdkckpKUpFYdyYySrCyIaQ45kuzqkny6SDmECyJ5gtMI5xKmZEGkHMLDR7bnhkvIb0bkmeOCcGUI0yyBcBZhMnYEN4cKYabJKTSF7fs55KgiC19Sc5SbMUtzqO63KuUkqK5ZlYYdWeSQH053VFmHo7raJGaYv/ZpAlWOWqX8KT1OljPHNdpAcyrSYIpE28qFiV6duBOmTFzPxNTWZGyOg6eKwJQnnNgJvOYn5JWjliLNtNjJLsfxLyami3LaicyFcaGAHMf9WH4nDjqx/HqMqCHHwS3mIapGWWLDBdVHB1JJjlUVEksVM2qcOe5Zu47dKKTFTsbnHEPKpZz2y+pzim0rN5SokIoq79SWw+KgupC6WvSR40KSIqnuxIUOzZFnr2mjRcPmiLKkmROdm+Mhy3ecrkJc03BbEaLS5Qwq3HNeOWBIyYdg4ANywJcgByAH6KE5gOYAPTQH0Bygh+YAmgP00BxAc4AemgNoDtBDcwDNAXpoDqA5QA/NATQH6KE5gOYAPTQH0Bygh+YAmgP00BxAc4Cev2vSCftOnie1AAAAAElFTkSuQmCC">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* Direction : salle de boxe, fond gris froid, rouge gant pour l'effort, bleu acier pour le repos, ambre pour la préparation.
+   Mise en page : une colonne mobile, horloge géante en haut, onglets Timer / Séances / Combos. */
+:root{
+  --bg:#e9edf1; --surface:#ffffff; --surface2:#f2f5f8; --ink:#12161c; --muted:#566170; --line:#d3dae2;
+  --red:#c8211a; --blue:#1d5cc4; --amber:#a8650a; --green:#17803f; --on-phase:#ffffff;
+  --display:'Barlow Condensed','Arial Narrow',Arial,sans-serif;
+  --body:'Barlow',system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif;
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0d1014; --surface:#171b21; --surface2:#1f242c; --ink:#edf0f4; --muted:#9aa4b2; --line:#2a313b;
+    --red:#ff5a4d; --blue:#6aa3ff; --amber:#f0a83a; --green:#3ecb7a; --on-phase:#0d1014;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0d1014; --surface:#171b21; --surface2:#1f242c; --ink:#edf0f4; --muted:#9aa4b2; --line:#2a313b;
+  --red:#ff5a4d; --blue:#6aa3ff; --amber:#f0a83a; --green:#3ecb7a; --on-phase:#0d1014;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+[hidden]{display:none !important}
+html,body{margin:0}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.45;-webkit-text-size-adjust:100%}
+button{font:inherit;color:inherit;cursor:pointer;border:0;background:none;padding:0}
+:focus-visible{outline:3px solid var(--blue);outline-offset:2px}
+.wrap{max-width:560px;margin:0 auto;padding:16px 16px 40px}
+header{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px}
+h1{font-family:var(--display);font-weight:700;font-size:28px;letter-spacing:.06em;text-transform:uppercase;margin:0;text-wrap:balance}
+h2,h3{text-wrap:balance}
+
+/* Onglets */
+.tabs{display:grid;grid-template-columns:repeat(3,1fr);gap:4px;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:4px;margin-bottom:16px}
+.tabs button{padding:10px 8px;border-radius:9px;font-weight:600;color:var(--muted)}
+.tabs button[aria-selected="true"]{background:var(--ink);color:var(--bg)}
+
+/* Horloge */
+.clock{--phase:var(--amber);background:var(--surface);border:2px solid var(--phase);border-radius:20px;padding:18px 16px 20px;text-align:center;transition:border-color .2s}
+.clock[data-phase="work"]{--phase:var(--red)}
+.clock[data-phase="rest"]{--phase:var(--blue)}
+.clock[data-phase="prep"]{--phase:var(--amber)}
+.clock[data-phase="done"]{--phase:var(--green)}
+.phase-row{display:flex;align-items:center;justify-content:space-between;gap:10px;font-size:14px;color:var(--muted);min-height:30px}
+.badge{background:var(--phase);color:var(--on-phase);font-family:var(--display);font-weight:700;letter-spacing:.08em;text-transform:uppercase;font-size:17px;padding:3px 12px;border-radius:999px}
+.time{font-family:var(--display);font-weight:700;font-size:clamp(96px,30vw,150px);line-height:.95;color:var(--phase);font-variant-numeric:tabular-nums;margin:6px 0 10px;letter-spacing:.01em}
+.bar{height:8px;background:var(--surface2);border-radius:99px;overflow:hidden}
+.bar>i{display:block;height:100%;width:0;background:var(--phase);transition:width .12s linear}
+.step-title{font-family:var(--display);font-weight:700;font-size:28px;text-transform:uppercase;letter-spacing:.03em;margin:16px 0 2px}
+.step-sub{margin:0;color:var(--muted);min-height:1.45em}
+.combo{margin:16px 0 0;padding:12px 8px;background:var(--surface2);border-radius:14px}
+.combo .chips{display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
+.combo .names{margin-top:8px;font-size:14px;color:var(--muted)}
+.chip{display:inline-flex;align-items:center;justify-content:center;flex-direction:column;min-width:46px;height:46px;padding:0 10px;border-radius:12px;font-family:var(--display);font-weight:700;font-size:30px;line-height:1}
+.chip.n{background:var(--ink);color:var(--bg)}
+.chip.n small{font-family:var(--body);font-size:10px;font-weight:600;margin-top:1px;letter-spacing:.02em}
+.chip.d{border:2px dashed var(--blue);color:var(--blue);font-size:17px;text-transform:uppercase;letter-spacing:.04em}
+.controls{display:flex;align-items:center;justify-content:center;gap:14px;margin-top:20px}
+.ctl{width:52px;height:52px;border-radius:50%;background:var(--surface2);display:grid;place-items:center;border:1px solid var(--line)}
+.ctl svg,.play svg{width:24px;height:24px;fill:currentColor}
+.ctl:disabled{opacity:.35;cursor:default}
+.play{width:80px;height:80px;border-radius:50%;background:var(--phase);color:var(--on-phase);display:grid;place-items:center}
+.play svg{width:34px;height:34px}
+.next{margin:12px 2px 0;color:var(--muted);font-size:15px;text-align:center}
+.seq-meta{margin:2px 2px 0;font-size:14px;color:var(--muted);text-align:center}
+
+.opts{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:16px 0 0}
+.pill{padding:8px 14px;border-radius:999px;border:1px solid var(--line);background:var(--surface);font-weight:600;font-size:14px;color:var(--muted)}
+.pill[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+
+/* Panneaux */
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:14px 16px;margin-top:16px}
+details.panel summary{cursor:pointer;font-weight:600;list-style:none;display:flex;justify-content:space-between;align-items:center}
+details.panel summary::-webkit-details-marker{display:none}
+details.panel summary::after{content:'+';font-family:var(--display);font-size:26px;line-height:1;color:var(--muted)}
+details.panel[open] summary::after{content:'−'}
+.presets{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}
+.stepper{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:8px 0;border-top:1px solid var(--line)}
+.stepper .lbl{font-weight:500}
+.stepper .ctrl{display:flex;align-items:center;gap:6px}
+.stepper button{width:40px;height:40px;border-radius:10px;background:var(--surface2);border:1px solid var(--line);font-family:var(--display);font-size:24px;line-height:1}
+.stepper output{display:inline-block;min-width:64px;text-align:center;font-family:var(--display);font-weight:700;font-size:26px;font-variant-numeric:tabular-nums}
+.btn{display:block;width:100%;margin-top:12px;padding:14px;border-radius:12px;background:var(--ink);color:var(--bg);font-weight:600;font-size:16px;text-align:center}
+
+/* Séances */
+.weeks{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.week{text-align:left;background:var(--surface);border:2px solid var(--line);border-radius:14px;padding:12px;display:flex;flex-direction:column;gap:2px}
+.week[aria-pressed="true"]{border-color:var(--red)}
+.week .num{font-family:var(--display);font-weight:700;font-size:15px;letter-spacing:.1em;color:var(--muted);text-transform:uppercase}
+.week .ttl{font-family:var(--display);font-weight:700;font-size:24px;text-transform:uppercase;line-height:1.1}
+.week .foc{font-size:13px;color:var(--muted)}
+.week .done{font-size:13px;font-weight:600;color:var(--green);margin-top:4px}
+.rhythm{margin:12px 2px 0;color:var(--muted);font-size:14px}
+.block{padding:12px 0;border-top:1px solid var(--line)}
+.block:first-of-type{border-top:0}
+.block h3{margin:0;font-family:var(--display);font-size:20px;text-transform:uppercase;letter-spacing:.04em;display:flex;justify-content:space-between;gap:8px}
+.block h3 span{color:var(--muted);font-size:16px}
+.block p{margin:2px 0 0;color:var(--muted);font-size:14px}
+.rounds{margin:8px 0 0;padding:0;list-style:none;display:grid;gap:6px}
+.rounds li{display:grid;grid-template-columns:26px 1fr;gap:8px;font-size:14px}
+.rounds b{font-family:var(--display);font-size:18px;color:var(--red)}
+.total{font-weight:600;margin:12px 0 0}
+
+/* Combos */
+.legend{display:grid;grid-template-columns:1fr 1fr;gap:8px 12px;margin:10px 0 0;padding:0;list-style:none;font-size:14px}
+.legend li{display:flex;align-items:center;gap:8px}
+.legend .chip{min-width:34px;height:34px;font-size:22px;border-radius:9px}
+.lvl{margin-top:16px}
+.lvl h3{margin:0 0 8px;font-family:var(--display);font-size:22px;text-transform:uppercase;letter-spacing:.04em}
+.lvl .row{display:flex;flex-wrap:wrap;gap:4px;align-items:center;padding:8px 0;border-top:1px solid var(--line)}
+.lvl .row .chip{min-width:34px;height:34px;font-size:22px;border-radius:9px;padding:0 8px}
+.lvl .row .chip.d{font-size:13px}
+.tips{margin:8px 0 0;padding-left:20px}
+.tips li{margin:6px 0}
+.note{font-size:14px;color:var(--muted);margin:8px 0 0}
+
+@media (prefers-reduced-motion: reduce){.bar>i,.clock{transition:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>Timer Boxe Solo</h1>
+  </header>
+
+  <nav class="tabs" role="tablist" aria-label="Sections">
+    <button role="tab" id="tb-timer" aria-selected="true" data-tab="timer">Timer</button>
+    <button role="tab" id="tb-plan" aria-selected="false" data-tab="plan">Séances</button>
+    <button role="tab" id="tb-combos" aria-selected="false" data-tab="combos">Combos</button>
+  </nav>
+
+  <!-- TIMER -->
+  <section id="tab-timer" role="tabpanel" aria-labelledby="tb-timer">
+    <div class="clock" id="clock" data-phase="prep">
+      <div class="phase-row"><span class="badge" id="badge">Prêt</span><span id="info"></span></div>
+      <div class="time" id="time" role="timer" aria-live="off">00:10</div>
+      <div class="bar" aria-hidden="true"><i id="barFill"></i></div>
+      <h2 class="step-title" id="stepTitle"></h2>
+      <p class="step-sub" id="stepSub"></p>
+      <div class="combo" id="comboBox" hidden>
+        <div class="chips" id="comboChips"></div>
+        <div class="names" id="comboNames"></div>
+      </div>
+      <div class="controls">
+        <button class="ctl" id="bReset" aria-label="Recommencer" title="Recommencer"><svg viewBox="0 0 24 24"><path d="M12 5V2L7 6.5 12 11V8a5 5 0 1 1-5 5H5a7 7 0 1 0 7-8z"/></svg></button>
+        <button class="ctl" id="bPrev" aria-label="Étape précédente" title="Étape précédente"><svg viewBox="0 0 24 24"><path d="M6 5h2v14H6zM20 5v14L9.5 12z"/></svg></button>
+        <button class="play" id="bPlay" aria-label="Démarrer"></button>
+        <button class="ctl" id="bNext" aria-label="Étape suivante" title="Étape suivante"><svg viewBox="0 0 24 24"><path d="M16 5h2v14h-2zM4 5v14l10.5-7z"/></svg></button>
+      </div>
+    </div>
+    <p class="next" id="nextUp"></p>
+    <p class="seq-meta" id="seqMeta"></p>
+
+    <div class="opts">
+      <button class="pill" id="oSound" aria-pressed="true">Sons</button>
+      <button class="pill" id="oVibe" aria-pressed="true">Vibration</button>
+      <button class="pill" id="oCombo" aria-pressed="true">Combos auto</button>
+    </div>
+
+    <details class="panel" id="freePanel">
+      <summary>Timer libre</summary>
+      <div class="presets">
+        <button class="pill" data-preset="pro">12 × 3:00</button>
+        <button class="pill" data-preset="amateur">4 × 2:00</button>
+        <button class="pill" data-preset="inter">8 × 0:30 / 0:30</button>
+      </div>
+      <div class="stepper"><span class="lbl">Rounds</span><span class="ctrl"><button data-f="rounds" data-d="-1" aria-label="Moins de rounds">−</button><output id="fRounds">6</output><button data-f="rounds" data-d="1" aria-label="Plus de rounds">+</button></span></div>
+      <div class="stepper"><span class="lbl">Durée d'un round</span><span class="ctrl"><button data-f="work" data-d="-15" aria-label="Round plus court">−</button><output id="fWork">3:00</output><button data-f="work" data-d="15" aria-label="Round plus long">+</button></span></div>
+      <div class="stepper"><span class="lbl">Repos</span><span class="ctrl"><button data-f="rest" data-d="-5" aria-label="Repos plus court">−</button><output id="fRest">1:00</output><button data-f="rest" data-d="5" aria-label="Repos plus long">+</button></span></div>
+      <button class="btn" id="fLoad">Charger ce timer</button>
+    </details>
+  </section>
+
+  <!-- SÉANCES -->
+  <section id="tab-plan" role="tabpanel" aria-labelledby="tb-plan" hidden>
+    <div class="weeks" id="weeks"></div>
+    <p class="rhythm">3 séances par semaine, par exemple lundi, mercredi et samedi. Chaque séance dure environ 55 minutes avec l'échauffement et le retour au calme.</p>
+    <div class="panel" id="planDetail"></div>
+  </section>
+
+  <!-- COMBOS -->
+  <section id="tab-combos" role="tabpanel" aria-labelledby="tb-combos" hidden>
+    <div class="panel" style="margin-top:0">
+      <h3 style="margin:0;font-family:var(--display);font-size:22px;text-transform:uppercase;letter-spacing:.04em">Numérotation</h3>
+      <ul class="legend" id="legend"></ul>
+      <p class="note">Garde orthodoxe. Si tu es gaucher, inverse les mains.</p>
+    </div>
+    <div class="panel" id="levels"></div>
+    <div class="panel">
+      <h3 style="margin:0;font-family:var(--display);font-size:22px;text-transform:uppercase;letter-spacing:.04em">Pour que ça serve</h3>
+      <ul class="tips">
+        <li><b>Hanches et pieds</b> : chaque coup part de la rotation, pas seulement des bras.</li>
+        <li><b>Retour en garde</b> après chaque coup, bras hauts, menton rentré.</li>
+        <li><b>Souffle</b> : expire à chaque frappe.</li>
+        <li><b>Déplacements</b> : avance, recule, pivote entre les combinaisons.</li>
+        <li><b>Adversaire imaginaire</b> : vise une cible, esquive avant de contrer.</li>
+      </ul>
+    </div>
+  </section>
+</div>
+
+<script>
+(function(){
+'use strict';
+var $=function(s){return document.querySelector(s)};
+var $$=function(s){return Array.prototype.slice.call(document.querySelectorAll(s))};
+var store={
+  get:function(k,d){try{var v=localStorage.getItem('tbs:'+k);return v===null?d:JSON.parse(v)}catch(e){return d}},
+  set:function(k,v){try{localStorage.setItem('tbs:'+k,JSON.stringify(v))}catch(e){}}
+};
+
+/* ---------- Données ---------- */
+var NAMES={'1':'Jab','2':'Direct','3':'Crochet avant','4':'Crochet arrière','5':'Uppercut avant','6':'Uppercut arrière','3b':'Crochet au corps','Esq':'Esquive','Slip':'Rotation de buste','Back':'Buste en arrière','Retr':'Retraite','Pas':'Pas de côté'};
+var SHORT={'Esq':'Esquive','Slip':'Slip','Back':'Buste arrière','Retr':'Retraite','Pas':'Pas de côté'};
+var LEVELS=[
+  {name:'Jab et direct',combos:[['1'],['1','1'],['1','2'],['1','1','2'],['1','2','1','2']]},
+  {name:'Niveau 1 · Bases',combos:[['1','2'],['1','1','2'],['1','2','3'],['1','2','3','2'],['2','3','2']]},
+  {name:'Niveau 2 · Corps et tête',combos:[['1','2','3b','3'],['1','2','5','2'],['1','1','2','3'],['1','2','3','4'],['2','3','6','3']]},
+  {name:'Niveau 3 · Avec défense',combos:[['1','2','Esq','3','2'],['1','2','3','Slip','2','3'],['1','2','Back','1','2'],['3','4','Retr','1','2'],['1','Pas','2','3','2']]}
+];
+var SHADOW=[
+  {title:'Jab et 1-2',sub:'Jab seul, déplacements, puis 1-2',level:0},
+  {title:'Combos de base',sub:'Rythme lent, rotation des hanches',level:1},
+  {title:'Corps et tête',sub:'Change de niveau en fléchissant les jambes',level:2},
+  {title:'Avec défense',sub:'Esquives, rotations, retour de combinaison',level:3},
+  {title:'Libre',sub:'Enchaîne ce que tu veux, imagine un adversaire',mix:true},
+  {title:'Vitesse',sub:'Combinaisons courtes, rapides, bien placées',mix:true,maxLen:3},
+  {title:'Longs enchaînements',sub:'4 coups et plus, sans te précipiter',mix:true,minLen:4},
+  {title:'Intensité max',sub:'Tout ce que tu as, garde haute',mix:true}
+];
+var ROPE=['Pas simple, régulier','Alternance de pieds','Enchaîne pas simple et alternance','Vitesse sur les 30 dernières secondes'];
+var WEEKS=[
+  {n:1,title:'Technique',focus:'Postures, jab et direct, rythme tranquille',cap:0,shadow:6},
+  {n:2,title:'Crochets',focus:'Ajout des crochets, plus de déplacements',cap:1,shadow:6},
+  {n:3,title:'Enchaînements',focus:'Combinaisons de 4 à 5 coups, rounds plus intenses',cap:2,shadow:6},
+  {n:4,title:'Intensité',focus:'8 rounds de shadow, corde plus rapide',cap:3,shadow:8}
+];
+
+function poolFor(t,cap){
+  if(t.mix){
+    var all=[];
+    for(var i=0;i<=cap;i++)all=all.concat(LEVELS[i].combos);
+    if(t.maxLen)all=all.filter(function(c){return c.length<=t.maxLen});
+    if(t.minLen)all=all.filter(function(c){return c.length>=t.minLen});
+    return all.length?all:LEVELS[0].combos;
+  }
+  return LEVELS[Math.min(t.level,cap)].combos;
+}
+
+function buildSession(wi){
+  var w=WEEKS[wi],s=[],i;
+  s.push({kind:'prep',title:'Prépare-toi',sub:'La séance démarre dans quelques secondes',dur:10,info:'Prépa'});
+  s.push({kind:'warm',title:'Corde tranquille',sub:'Rythme facile, poignets souples',dur:60,info:'Échauffement 1/3'});
+  s.push({kind:'rest',title:'Respire',sub:'Reprends ton souffle',dur:10,info:'Échauffement'});
+  s.push({kind:'warm',title:'Corde tranquille',sub:'Un peu plus vif',dur:60,info:'Échauffement 2/3'});
+  s.push({kind:'warm',title:'Mobilité',sub:'Épaules, hanches, poignets',dur:120,info:'Échauffement 3/3'});
+  for(i=0;i<ROPE.length;i++){
+    s.push({kind:'work',cat:'rope',title:'Corde',sub:ROPE[i],dur:180,info:'Corde · round '+(i+1)+'/'+ROPE.length});
+    s.push({kind:'rest',title:'Repos',sub:'Respire, hydrate-toi',dur:60,info:'Repos'});
+  }
+  for(i=0;i<w.shadow;i++){
+    var t=SHADOW[i];
+    s.push({kind:'work',cat:'shadow',title:'Shadow · '+t.title,sub:t.sub,dur:180,pool:poolFor(t,w.cap),info:'Shadow · round '+(i+1)+'/'+w.shadow});
+    if(i<w.shadow-1)s.push({kind:'rest',title:'Repos',sub:'Respire, garde les mains hautes',dur:60,info:'Repos'});
+  }
+  s.push({kind:'cool',title:'Retour au calme',sub:'Étirements : épaules, mollets, hanches, dos',dur:300,info:'Retour au calme'});
+  return s;
+}
+function buildFree(rounds,work,rest){
+  var s=[{kind:'prep',title:'Prépare-toi',sub:'Le premier round arrive',dur:10,info:'Prépa'}];
+  for(var i=0;i<rounds;i++){
+    s.push({kind:'work',cat:'free',title:'Round '+(i+1),sub:'',dur:work,info:'Round '+(i+1)+'/'+rounds});
+    if(rest>0&&i<rounds-1)s.push({kind:'rest',title:'Repos',sub:'',dur:rest,info:'Repos'});
+  }
+  return s;
+}
+function total(steps){return steps.reduce(function(a,b){return a+b.dur},0)}
+function mmss(sec){sec=Math.max(0,Math.ceil(sec));return String(Math.floor(sec/60)).padStart(2,'0')+':'+String(sec%60).padStart(2,'0')}
+function dur(sec){var m=Math.floor(sec/60),s=sec%60;return s?m+':'+String(s).padStart(2,'0'):m+' min'}
+
+/* ---------- Sons ---------- */
+var soundOn=store.get('sound',true),vibeOn=store.get('vibe',true),autoCombo=store.get('combo',true);
+var ac=null;
+function ensureAudio(){
+  try{
+    if(!ac){var C=window.AudioContext||window.webkitAudioContext;if(C)ac=new C()}
+    if(ac&&ac.state==='suspended')ac.resume();
+  }catch(e){}
+}
+function tone(f,t0,d,g,type){
+  var o=ac.createOscillator(),gn=ac.createGain();
+  o.type=type||'sine';o.frequency.value=f;
+  gn.gain.setValueAtTime(0.0001,t0);
+  gn.gain.exponentialRampToValueAtTime(g,t0+0.005);
+  gn.gain.exponentialRampToValueAtTime(0.0001,t0+d);
+  o.connect(gn);gn.connect(ac.destination);
+  o.start(t0);o.stop(t0+d+0.05);
+}
+function bell(n){
+  if(!soundOn||!ac)return;
+  try{
+    var t=ac.currentTime+0.02;
+    for(var i=0;i<n;i++){
+      var s=t+i*0.6;
+      [[1,0.35],[2.76,0.18],[5.4,0.08]].forEach(function(p){tone(640*p[0],s,1.5,p[1])});
+    }
+  }catch(e){}
+}
+function beep(f,d){if(!soundOn||!ac)return;try{tone(f||880,ac.currentTime+0.01,d||0.12,0.25,'square')}catch(e){}}
+function clap(){
+  if(!soundOn||!ac)return;
+  try{var t=ac.currentTime+0.01;tone(1600,t,0.05,0.3,'square');tone(1600,t+0.14,0.05,0.3,'square')}catch(e){}
+}
+function buzz(p){if(!vibeOn)return;try{if(navigator.vibrate)navigator.vibrate(p)}catch(e){}}
+
+/* ---------- Moteur ---------- */
+var S={steps:[],label:'',idx:0,remaining:0,running:false,endAt:0,started:false,done:false,fired:{},combo:null,nextCombo:0,weekIdx:null};
+
+function load(steps,label,weekIdx){
+  S.steps=steps;S.label=label;S.weekIdx=weekIdx;
+  reset();
+}
+function reset(){
+  S.running=false;S.started=false;S.done=false;S.idx=0;
+  S.remaining=S.steps[0].dur*1000;S.fired={};S.combo=null;
+  render(true);
+}
+function pickCombo(now){
+  var st=S.steps[S.idx];if(!st.pool)return;
+  var last=S.combo?S.combo.join('-'):'',c,tries=0;
+  do{c=st.pool[Math.floor(Math.random()*st.pool.length)];tries++}while(c.join('-')===last&&tries<8&&st.pool.length>1);
+  S.combo=c;S.nextCombo=now+20000;
+}
+function cue(kind,prevKind){
+  if(!S.running)return;
+  if(kind==='work'){bell(1);buzz([250])}
+  else if((kind==='rest'||kind==='cool')&&prevKind==='work'){bell(2);buzz([150,100,150])}
+  else{beep(660,0.15)}
+}
+function enter(i,prevKind){
+  S.idx=i;S.fired={};S.combo=null;
+  if(S.steps[i].pool)pickCombo(performance.now());
+  cue(S.steps[i].kind,prevKind);
+}
+function finish(){
+  S.running=false;S.done=true;S.remaining=0;
+  bell(3);buzz([400,150,400]);
+  if(S.weekIdx!==null){
+    var d=store.get('done',{}),k='w'+(S.weekIdx+1);
+    d[k]=(d[k]||0)+1;store.set('done',d);renderPlan();
+  }
+  render(true);
+}
+function toggle(){
+  if(S.done){reset();return}
+  ensureAudio();
+  var now=performance.now();
+  if(S.running){S.running=false;S.remaining=Math.max(0,S.endAt-now);render(true);return}
+  S.running=true;S.endAt=now+S.remaining;
+  if(!S.started){S.started=true;enter(S.idx,null)}
+  else if(S.combo)S.nextCombo=now+8000;
+  try{if(navigator.wakeLock)navigator.wakeLock.request('screen').catch(function(){})}catch(e){}
+  render(true);
+}
+function go(i){
+  if(S.done)return;
+  if(i<0)i=0;
+  if(i>=S.steps.length){if(S.started)finish();return}
+  var pk=S.steps[S.idx].kind;
+  enter(i,pk);
+  S.remaining=S.steps[i].dur*1000;
+  if(S.running)S.endAt=performance.now()+S.remaining;
+  render(true);
+}
+function prev(){
+  var st=S.steps[S.idx];
+  if(st.dur*1000-S.remaining>3000)go(S.idx);else go(S.idx-1);
+}
+function tick(){
+  if(!S.running)return;
+  var now=performance.now(),rem=S.endAt-now;
+  while(rem<=0){
+    if(S.idx>=S.steps.length-1){finish();return}
+    var base=S.endAt,pk=S.steps[S.idx].kind;
+    enter(S.idx+1,pk);
+    S.endAt=base+S.steps[S.idx].dur*1000;
+    rem=S.endAt-now;
+  }
+  S.remaining=rem;
+  var st=S.steps[S.idx],sec=Math.ceil(rem/1000);
+  if(st.dur>=10&&sec<=3&&sec>=1&&!S.fired['b'+sec]){S.fired['b'+sec]=1;beep(sec===1?1100:880,0.1)}
+  if(st.kind==='work'&&st.dur>=60&&sec<=10&&sec>3&&!S.fired.c){S.fired.c=1;clap();buzz([80])}
+  if(st.pool&&autoCombo&&now>=S.nextCombo&&sec>3)pickCombo(now);
+  render(false);
+}
+
+/* ---------- Affichage ---------- */
+var ICON_PLAY='<svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>';
+var ICON_PAUSE='<svg viewBox="0 0 24 24"><path d="M6 5h4v14H6zM14 5h4v14h-4z"/></svg>';
+var ICON_REDO='<svg viewBox="0 0 24 24"><path d="M12 5V2L7 6.5 12 11V8a5 5 0 1 1-5 5H5a7 7 0 1 0 7-8z"/></svg>';
+var lastKey='';
+function chips(c){
+  return c.map(function(t){
+    if(t==='3b')return '<span class="chip n">3<small>corps</small></span>';
+    if(NAMES[t]&&!/^\d$/.test(t))return '<span class="chip d">'+(SHORT[t]||NAMES[t])+'</span>';
+    return '<span class="chip n">'+t+'</span>';
+  }).join('');
+}
+function render(full){
+  var st=S.steps[S.idx];
+  $('#time').textContent=mmss(S.remaining/1000);
+  var pct=S.done?100:(1-S.remaining/(st.dur*1000))*100;
+  $('#barFill').style.width=Math.min(100,Math.max(0,pct))+'%';
+  if(!full)return;
+  var phase=st.kind==='work'?'work':st.kind==='rest'?'rest':'prep',badge;
+  if(S.done){phase='done';badge='Terminé'}
+  else if(!S.started&&S.idx===0)badge='Prêt';
+  else if(st.kind==='work')badge=st.cat==='rope'?'Corde':st.cat==='shadow'?'Shadow':'Round';
+  else badge={prep:'Prépa',rest:'Repos',warm:'Échauffement',cool:'Retour au calme'}[st.kind];
+  $('#clock').setAttribute('data-phase',phase);
+  $('#badge').textContent=badge;
+  if(S.done){
+    $('#info').textContent='';
+    $('#stepTitle').textContent='Bien joué';
+    $('#stepSub').textContent='Séance terminée en '+dur(total(S.steps));
+    $('#nextUp').textContent='';
+  }else{
+    $('#info').textContent=st.info;
+    $('#stepTitle').textContent=st.title;
+    $('#stepSub').textContent=st.sub||'';
+    var nx=S.steps[S.idx+1];
+    $('#nextUp').textContent=nx?'À suivre : '+nx.title+' · '+dur(nx.dur):'Dernière étape';
+  }
+  $('#seqMeta').textContent=S.label+' · '+dur(total(S.steps));
+  var showCombo=!S.done&&st.pool&&autoCombo&&S.combo&&S.started;
+  $('#comboBox').hidden=!showCombo;
+  if(showCombo){
+    var key=S.idx+':'+S.combo.join('-');
+    if(key!==lastKey){
+      lastKey=key;
+      $('#comboChips').innerHTML=chips(S.combo);
+      $('#comboNames').textContent=S.combo.map(function(t){return NAMES[t]}).join(' · ');
+    }
+  }
+  var p=$('#bPlay');
+  p.innerHTML=S.done?ICON_REDO:(S.running?ICON_PAUSE:ICON_PLAY);
+  p.setAttribute('aria-label',S.done?'Recommencer':(S.running?'Pause':(S.started?'Reprendre':'Démarrer')));
+  $('#bPrev').disabled=S.done||(S.idx===0&&S.steps[0].dur*1000-S.remaining<=3000);
+  $('#bNext').disabled=S.done;
+}
+function pollTick(){tick();render(false)}
+
+/* ---------- Réglages ---------- */
+function setPressed(el,v){el.setAttribute('aria-pressed',v?'true':'false')}
+function initOpts(){
+  setPressed($('#oSound'),soundOn);setPressed($('#oVibe'),vibeOn);setPressed($('#oCombo'),autoCombo);
+  $('#oSound').addEventListener('click',function(){soundOn=!soundOn;store.set('sound',soundOn);setPressed(this,soundOn);if(soundOn){ensureAudio();beep(880,0.1)}});
+  $('#oVibe').addEventListener('click',function(){vibeOn=!vibeOn;store.set('vibe',vibeOn);setPressed(this,vibeOn);if(vibeOn)buzz([60])});
+  $('#oCombo').addEventListener('click',function(){
+    autoCombo=!autoCombo;store.set('combo',autoCombo);setPressed(this,autoCombo);
+    if(autoCombo&&S.steps[S.idx].pool&&!S.combo)pickCombo(performance.now());
+    render(true);
+  });
+}
+
+/* ---------- Timer libre ---------- */
+var free=store.get('free',{rounds:6,work:180,rest:60});
+var LIM={rounds:[1,20],work:[15,600],rest:[0,300]};
+function renderFree(){
+  $('#fRounds').textContent=free.rounds;
+  $('#fWork').textContent=Math.floor(free.work/60)+':'+String(free.work%60).padStart(2,'0');
+  $('#fRest').textContent=Math.floor(free.rest/60)+':'+String(free.rest%60).padStart(2,'0');
+}
+function loadFree(){
+  store.set('free',free);
+  load(buildFree(free.rounds,free.work,free.rest),'Libre · '+free.rounds+' × '+dur(free.work)+(free.rest?' / '+dur(free.rest):''),null);
+}
+function initFree(){
+  renderFree();
+  $$('[data-f]').forEach(function(b){
+    b.addEventListener('click',function(){
+      var k=b.getAttribute('data-f'),d=parseInt(b.getAttribute('data-d'),10);
+      free[k]=Math.min(LIM[k][1],Math.max(LIM[k][0],free[k]+d));
+      renderFree();
+    });
+  });
+  var P={pro:{rounds:12,work:180,rest:60},amateur:{rounds:4,work:120,rest:60},inter:{rounds:8,work:30,rest:30}};
+  $$('[data-preset]').forEach(function(b){
+    b.addEventListener('click',function(){free=Object.assign({},P[b.getAttribute('data-preset')]);renderFree();loadFree()});
+  });
+  $('#fLoad').addEventListener('click',function(){loadFree();$('#freePanel').open=false;window.scrollTo(0,0)});
+}
+
+/* ---------- Séances ---------- */
+var selWeek=Math.min(3,Math.max(0,store.get('week',0)));
+function renderPlan(){
+  var done=store.get('done',{});
+  $('#weeks').innerHTML=WEEKS.map(function(w,i){
+    var n=done['w'+w.n]||0;
+    return '<button class="week" data-w="'+i+'" aria-pressed="'+(i===selWeek)+'">'
+      +'<span class="num">Semaine '+w.n+'</span><span class="ttl">'+w.title+'</span><span class="foc">'+w.focus+'</span>'
+      +(n?'<span class="done">Faite '+n+' fois</span>':'')+'</button>';
+  }).join('');
+  $$('.week').forEach(function(b){
+    b.addEventListener('click',function(){selWeek=parseInt(b.getAttribute('data-w'),10);store.set('week',selWeek);renderPlan()});
+  });
+  var w=WEEKS[selWeek],steps=buildSession(selWeek);
+  var rounds=SHADOW.slice(0,w.shadow).map(function(t,i){return '<li><b>'+(i+1)+'</b><span><strong>'+t.title+'</strong> · '+t.sub+'</span></li>'}).join('');
+  $('#planDetail').innerHTML=
+    '<div class="block"><h3>Échauffement <span>5 min</span></h3><p>Corde tranquille, puis mobilité épaules, hanches et poignets.</p></div>'
+   +'<div class="block"><h3>Corde <span>4 × 3 min</span></h3><p>Repos 1 min. Pas simple, alternance de pieds, puis vitesse sur la fin du dernier round.</p></div>'
+   +'<div class="block"><h3>Shadow <span>'+w.shadow+' × 3 min</span></h3><ol class="rounds">'+rounds+'</ol></div>'
+   +'<div class="block"><h3>Retour au calme <span>5 min</span></h3><p>Étirements : épaules, mollets, hanches, dos.</p></div>'
+   +'<p class="total">Durée totale : environ '+Math.round(total(steps)/60)+' min</p>'
+   +'<button class="btn" id="launch">Lancer la séance</button>';
+  $('#launch').addEventListener('click',function(){
+    load(buildSession(selWeek),'Semaine '+w.n+' · '+w.title,selWeek);
+    switchTab('timer');window.scrollTo(0,0);
+  });
+}
+
+/* ---------- Combos ---------- */
+function renderCombos(){
+  $('#legend').innerHTML=['1','2','3','4','5','6'].map(function(t){return '<li><span class="chip n">'+t+'</span>'+NAMES[t]+'</li>'}).join('');
+  $('#levels').innerHTML=LEVELS.slice(1).map(function(l){
+    return '<div class="lvl"><h3>'+l.name+'</h3>'+l.combos.map(function(c){
+      return '<div class="row">'+chips(c)+'</div>';
+    }).join('')+'</div>';
+  }).join('');
+  $('#levels .lvl').style.marginTop='0';
+}
+
+/* ---------- Onglets ---------- */
+function switchTab(name){
+  ['timer','plan','combos'].forEach(function(t){
+    $('#tab-'+t).hidden=(t!==name);
+    $('#tb-'+t).setAttribute('aria-selected',t===name?'true':'false');
+  });
+}
+$$('[data-tab]').forEach(function(b){b.addEventListener('click',function(){switchTab(b.getAttribute('data-tab'))})});
+
+/* ---------- Démarrage ---------- */
+$('#bPlay').addEventListener('click',toggle);
+$('#bReset').addEventListener('click',reset);
+$('#bNext').addEventListener('click',function(){go(S.idx+1)});
+$('#bPrev').addEventListener('click',prev);
+initOpts();initFree();renderPlan();renderCombos();
+load(buildSession(selWeek),'Semaine '+WEEKS[selWeek].n+' · '+WEEKS[selWeek].title,selWeek);
+setInterval(tick,100);
+})();
+</script>
+</body>
+</html>
